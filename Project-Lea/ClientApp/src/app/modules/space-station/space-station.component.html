@@ -1,0 +1,10 @@
+<body>
+    <!--before data saved to file-->
+    <div *ngIf="!isFileSaved">
+    <h1>International Space station</h1>
+    <app-current-location></app-current-location>
+    <button type="button" *ngIf="checkLocationdataInService()"  class="btn btn-primary" (click)="saveLocation()">Save Location To File </button>
+    </div>
+    <!--after data save to file-->
+    <div *ngIf="isFileSaved">{{message}}</div>
+    </body>

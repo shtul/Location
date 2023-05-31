@@ -1,0 +1,25 @@
+<div *ngIf="currentLocation">
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Note for the current location</h4>
+          </div>
+          <div class="modal-body">
+            <div>
+              <input type="text" placeholder="write here your note" [(ngModel)]="currentLocation.message" *ngIf="!isNoteSaved" />
+              <div *ngIf="isNoteSaved">Note saved!</div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" (click)="closePopup()">
+              Close
+            </button>
+            <button type="button" class="btn btn-danger" (click)="SaveNote()" *ngIf="CheckIsEmptyNote()">
+              Save Note
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
